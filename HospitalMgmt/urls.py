@@ -20,5 +20,5 @@ from hospital.views import about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', about, name='about')
+    path('about/', about, name='about'),
 ]
