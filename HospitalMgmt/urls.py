@@ -16,9 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from hospital.views import about
+from hospital.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name='about'),
+    path('', Index, name='home'),
+    path('admin_login/', Login, name='login'),
+    path('logout/', Logout_admin, name='logout'),
+    path('contact/', Contact, name='contact'),
+    path('view_doctor/', view_doctor, name='view_doctor'),
+    path('add_doctor/', add_doctor, name='add_doctor'),
+    path('delete_doctor(?p<int:pid>)/', delete_doctor, name='delete_doctor'),
+    path('view_patient/', view_patient, name='view_patient'),
+    path('add_patient/', add_patient, name='add_patient'),
+    path('delete_patient(?p<int:patientid>)/', delete_patient, name='delete_patient'),
+    path('view_appointment/', view_appointment, name='view_appointment'),
+    path('add_appointment/', add_appointment, name='add_appointment'),
+    path('delete_appointmetn(?p<int:pid>)/', delete_appointment, name='delete_appointment'),
+
 ]
