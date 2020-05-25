@@ -16,6 +16,7 @@
                 <th>Patient Name</th>
                 <th>Date</th>
                 <th>Time</th>
+                <th>Status</th>
                 <th>Delete</th>
             </tr>
             </thead>
@@ -27,6 +28,7 @@
                     <td>{{ i.patient }}</td>
                     <td>{{ i.date }}</td>
                     <td>{{ i.time }}</td>
+                    <td>{{ i.status }}</td>
                     <td><a href="{% url 'delete_appointment' i.id %}"
                            onclick="return confirm('Are you really want to Delete?')" class="btn btn-danger">Delete</a>
                     </td>

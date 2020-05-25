@@ -21,7 +21,7 @@ from hospital.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name='about'),
-    path('', Index, name='home'),
+    path('', home, name='home'),
     path('admin_login/', Login, name='login'),
     path('logout/', Logout_admin, name='logout'),
     path('contact/', Contact, name='contact'),
@@ -34,5 +34,6 @@ urlpatterns = [
     path('view_appointment/', view_appointment, name='view_appointment'),
     path('add_appointment/', add_appointment, name='add_appointment'),
     path('delete_appointmetn(?p<int:pid>)/', delete_appointment, name='delete_appointment'),
-
-]
+    path('register/', register, name='register'),
+    path('dashboard/', dashboard, name='dashboard'),
+    path('doc_appointment', doc_appointment, name='doc_appointment'),]

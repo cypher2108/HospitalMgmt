@@ -3,8 +3,8 @@
 }
 
 .nav-link:hover{
-    color: orange !important;
-    background-color: purple;
+    color: black !important;
+    background-color: white;
     border-radius: 10px;
 }
 .navbar-brand:hover{

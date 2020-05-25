@@ -1,0 +1,58 @@
+{% extends 'navigationBar.html' %}
+{% load static %}
+{% block body %}
+     <div class="container" style="margin-top: 50px">
+        <h2 class="text-center">Sign up</h2>
+        <br><br>
+        <form method="post" action="">
+            {% csrf_token %}
+            <label>First Name</label>
+            <input type="text" class="form-control" name="first_name" required>
+            <br>
+
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="last_name" required>
+            <br>
+
+            <label>user name</label>
+            <input type="text" class="form-control" name="user_name" required>
+            <br>
+
+            <label>Email Address</label>
+            <input type="text" class="form-control" name="email_address" required>
+            <br>
+
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" required>
+            <br>
+
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" name="confirm_password" required>
+            <br>
+
+
+            <label>Register As:</label>
+            <br>
+            <input type="radio" name="register_as" value="Doctor"> Doctor
+            <input type="radio" name="register_as" value="Patient"> Patient
+            <br>
+            <br>
+
+            <input type="submit" value="Submit" class="form-control btn btn-primary">
+        </form>
+    </div>
+    {% ifequal error "no" %}
+        <script>
+            alert('User created successfull');
+            window.location = ('{% url 'home' %}');
+        </script>
+    {% endifequal %}
+
+
+    {% ifequal error "yes" %}
+        <script>
+            alert('Something went wrong,Try Again');
+        </script>
+    {% endifequal %}
+
+{% endblock %}
