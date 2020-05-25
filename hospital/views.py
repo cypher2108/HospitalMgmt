@@ -194,9 +194,9 @@ def dashboard(request):
     patient = Patient.objects.all()
     pending = 0
     completed = 0
-    total=0
+    total = 0
     for i in appointment:
-        total+=1
+        total += 1
 
         if i.status == 'Completed':
             completed += 1
@@ -214,3 +214,5 @@ def doc_appointment(request):
     appointment = Appointment.objects.all()
     a = {'appointment': appointment, 'doc': doc}
     return render(request, 'view_appointment.html', a)
+
+
